@@ -34,8 +34,8 @@
                             <thead>
                                 <tr>
                                     <th width="50">Code</th>
-                                    <th width="150">Module Name</th>
-                                    <th width="440">Feature</th>
+                                    <th>Module Name</th>
+                                    <th width="340">Feature</th>
                                     <th width="50">Price</th>
                                     <th width="39">Action</th>
                                 </tr>
