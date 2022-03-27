@@ -70,6 +70,10 @@
                 <td>Price</td>
                 <td>{{ Form::text('price',null,['class'=>'form-control price','placeholder'=>'Price'])}}</td>
             </tr>
+            <tr>
+              <td>Description</td>
+              <td>{{ Form::textarea('description',null,['class'=>'form-control description','placeholder'=>'Description'])}}</td>
+          </tr>
           </table>
         </div>
         <div class="modal-footer">
@@ -150,6 +154,7 @@ function editModule(id){
       $(".module_name").val(response.module_name);
       $(".module_code").val(response.module_code);
       $(".price").val(response.price);
+      $(".description").val(response.description);
       $(".module_id").val(response.id);
     }
 });

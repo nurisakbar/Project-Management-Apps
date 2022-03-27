@@ -19,6 +19,7 @@ class CreateProjectModulesTable extends Migration
             $table->string('module_name');
             $table->string('module_code');
             $table->integer('price')->default(0);
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
