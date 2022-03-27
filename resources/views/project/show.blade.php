@@ -36,7 +36,7 @@
                                     <th width="50">Code</th>
                                     <th width="150">Module Name</th>
                                     <th>Description</th>
-                                    <th width="150">Feature</th>
+                                    <th width="240">Feature</th>
                                     <th width="50">Price</th>
                                     <th width="39">Action</th>
                                 </tr>
