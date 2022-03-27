@@ -139,11 +139,11 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($kode_fakultas)
+    public function destroy($id)
     {
-        $fakultas = Project::where('kode_fakultas', $kode_fakultas);
-        $fakultas->delete();
-        return redirect('/fakultas')->with('status', 'Data fakultas Berhasil Dihapus');
+        $project = Project::findOrFail($id);
+        $project->delete();
+        return redirect('/project')->with('message', 'A project With Name ' . $project->project_name . 'Was Deleted');
         ;
     }
 }
