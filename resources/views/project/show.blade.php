@@ -35,6 +35,7 @@
                                 <tr>
                                     <th width="100">Module Code</th>
                                     <th>Module Name</th>
+                                    <th>Description</th>
                                     <th>Feature</th>
                                     <th width="50">Price</th>
                                     <th width="39">Action</th>
@@ -50,7 +51,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Form Module</h5>
@@ -62,7 +63,7 @@
         <div class="modal-body">
           <table class="table table-bordered">
               <tr>
-                  <td>Module Code</td>
+                  <td width="180">Module Code</td>
                   <td>{{ Form::text('module_code',null,['class'=>'form-control module_code','placeholder'=>'Module Code'])}}</td>
               </tr>
               <tr>  
@@ -140,6 +141,7 @@ $(function() {
         columns: [
             { data: 'module_code', name: 'module_code' },
             { data: 'module_name', name: 'module_name' },
+            { data: 'description', name: 'description' },
             { data: 'feature', name: 'feature' },
             { data: 'price', name: 'price' },
             { data: 'action', name: 'action' }
