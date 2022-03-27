@@ -33,10 +33,10 @@
                     <table class="table table-bordered" id="users-table">
                             <thead>
                                 <tr>
-                                    <th width="100">Module Code</th>
-                                    <th>Module Name</th>
+                                    <th width="50">Code</th>
+                                    <th width="150">Module Name</th>
                                     <th>Description</th>
-                                    <th>Feature</th>
+                                    <th width="150">Feature</th>
                                     <th width="50">Price</th>
                                     <th width="39">Action</th>
                                 </tr>
