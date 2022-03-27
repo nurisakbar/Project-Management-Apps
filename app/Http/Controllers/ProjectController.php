@@ -75,7 +75,7 @@ class ProjectController extends Controller
      */
     public function show($id, Request $request)
     {
-        $data['project'] = Project::findOrFail($id);
+        $data['project'] = Project::with('module')->findOrFail($id);
         if ($request->ajax()) {
             return Datatables::of($data['project']->module)
             ->addColumn('action', function ($row) {
