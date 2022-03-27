@@ -97,7 +97,7 @@ class ProjectController extends Controller
                 }
                 return $listFeature;
             })
-            ->rawColumns(['feature','action'])
+            ->rawColumns(['feature','action','module_name'])
             ->make(true);
         }
         $data['module'] = Module::pluck('module_name', 'id');
