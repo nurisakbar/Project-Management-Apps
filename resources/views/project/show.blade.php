@@ -35,8 +35,7 @@
                                 <tr>
                                     <th width="50">Code</th>
                                     <th width="150">Module Name</th>
-                                    <th>Description</th>
-                                    <th width="240">Feature</th>
+                                    <th width="440">Feature</th>
                                     <th width="50">Price</th>
                                     <th width="39">Action</th>
                                 </tr>
@@ -141,7 +140,6 @@ $(function() {
         columns: [
             { data: 'module_code', name: 'module_code' },
             { data: 'module_name', name: 'module_name' },
-            { data: 'description', name: 'description' },
             { data: 'feature', name: 'feature' },
             { data: 'price', name: 'price' },
             { data: 'action', name: 'action' }

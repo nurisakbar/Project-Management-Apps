@@ -85,6 +85,9 @@ class ProjectController extends Controller
                 $action .= \Form::close();
                 return $action;
             })
+            ->addColumn('module_name', function ($row) {
+                return '<b>'.$row->module_name.'</b><br>'.$row->description;
+            })
             ->addColumn('feature', function ($row) {
                 $feature = Feature::where('module_id', $row->id)->get();
                 $listFeature = "";
