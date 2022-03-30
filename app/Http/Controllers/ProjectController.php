@@ -97,6 +97,9 @@ class ProjectController extends Controller
                 }
                 return $listFeature;
             })
+            ->addColumn('price', function ($row) {
+                return rupiah($row->price);
+            })
             ->rawColumns(['feature','action','module_name'])
             ->make(true);
         }
