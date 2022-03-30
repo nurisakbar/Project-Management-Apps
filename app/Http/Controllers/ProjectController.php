@@ -100,7 +100,7 @@ class ProjectController extends Controller
             ->rawColumns(['feature','action','module_name'])
             ->make(true);
         }
-        $data['module'] = Module::pluck('module_name', 'id');
+        $data['module'] = Module::where('project_id',$id)->pluck('module_name', 'id');
         return view('project.show', $data);
     }
 
@@ -145,6 +145,8 @@ class ProjectController extends Controller
     public function destroy($id)
     {
         $project = Project::findOrFail($id);
+        $project->module()->feature()->delete();
+        $project->module()->delete();
         $project->delete();
         return redirect('/project')->with('message', 'A project With Name ' . $project->project_name . 'Was Deleted');
         ;
