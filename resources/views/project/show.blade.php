@@ -113,7 +113,7 @@
               </tr>
             <tr>
               <td>Is Done</td>
-              <td>{{ Form::select('is_done',[1=>'Yes',0=>'No'],null,['class'=>'form-control is_done'])}}</td>
+              <td>{{ Form::select('is_done',[0=>'No',1=>'Yes'],null,['class'=>'form-control is_done'])}}</td>
           </tr>
           </table>
         </div>

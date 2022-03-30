@@ -74,6 +74,7 @@ class ModuleController extends Controller
     public function destroy($id)
     {
         $module = Module::findOrFail($id);
+        $module->feature()->delete();
         $module->delete();
         return redirect('project/' . $module->project_id)->with('message', 'A Module With Name ' . $module->module_name . ' Was Deleted');
     }

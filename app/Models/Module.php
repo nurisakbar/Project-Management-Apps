@@ -12,7 +12,8 @@ class Module extends Model
     protected $fillable = ['project_id','module_name','module_code','price','description'];
 
 
-    public function feature(){
+    public function feature()
+    {
         return $this->hasMany(Feature::class);
     }
 }

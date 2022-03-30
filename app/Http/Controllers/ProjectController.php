@@ -86,7 +86,7 @@ class ProjectController extends Controller
                 return $action;
             })
             ->addColumn('module_name', function ($row) {
-                return '<b>'.$row->module_name.'</b><br>'.$row->description;
+                return '<b>' . $row->module_name . '</b><br>' . $row->description;
             })
             ->addColumn('feature', function ($row) {
                 $feature = Feature::where('module_id', $row->id)->get();
@@ -100,7 +100,7 @@ class ProjectController extends Controller
             ->rawColumns(['feature','action','module_name'])
             ->make(true);
         }
-        $data['module'] = Module::where('project_id',$id)->pluck('module_name', 'id');
+        $data['module'] = Module::where('project_id', $id)->pluck('module_name', 'id');
         return view('project.show', $data);
     }
 
@@ -110,9 +110,9 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($kode_fakultas)
+    public function edit($id)
     {
-        $data['fakultas'] = Project::where('kode_fakultas', $kode_fakultas)->first();
+        $data['project'] = Project::with('module')->findOrFail($id);
         return view('project.edit', $data);
     }
 
@@ -123,17 +123,16 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $kode_fakultas)
+    public function update(Request $request, $id)
     {
         $request->validate([
-            'nama_fakultas' => 'required|min:6'
+            'project_name' => 'required',
+            'client_name' => 'required'
         ]);
 
-
-        $fakultas = Project::where('kode_fakultas', '=', $kode_fakultas);
-        $fakultas->update($request->except('_method', '_token'));
-        return redirect('/fakultas')->with('status', 'Data fakultas Berhasil Di Update');
-        ;
+        $project = Project::findOrFail($id);
+        $project->update($request->except('_method', '_token'));
+        return redirect('/project')->with('status', 'Data Project Berhasil Di Update');
     }
 
     /**
