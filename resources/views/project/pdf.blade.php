@@ -48,7 +48,7 @@
         <tr>
             <th width="40">CODE</th>
             <th width="300">MODULE NAME</th>
-            <th>FEATURE</th>
+            <th width="300">FEATURE</th>
         </tr>
         @foreach($project->module as $module)
         <tr>
