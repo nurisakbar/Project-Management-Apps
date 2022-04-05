@@ -16,9 +16,9 @@
                         <tr>
                             <td>Client Name</td><td> : {{ $project->client_name }}</td>
                         </tr>
-                        <tr>
+                        {{-- <tr>
                           <td>Total Budged</td><td> : Rp. {{ rupiah(\DB::select('select sum(price) as total_budged from modules where project_id='.$project->id)[0]->total_budged) }}</td>
-                      </tr>
+                      </tr> --}}
                     </table>
                     
                    <!-- Button trigger modal -->
@@ -37,7 +37,7 @@
                                     <th width="50">Code</th>
                                     <th>Module Name</th>
                                     <th width="340">Feature</th>
-                                    <th width="80">Price</th>
+                                    {{-- <th width="80">Price</th> --}}
                                     <th width="39">Action</th>
                                 </tr>
                             </thead>
@@ -142,7 +142,7 @@ $(function() {
             { data: 'module_code', name: 'module_code' },
             { data: 'module_name', name: 'module_name' },
             { data: 'feature', name: 'feature' },
-            { data: 'price', name: 'price' },
+            // { data: 'price', name: 'price' },
             { data: 'action', name: 'action' }
         ]
     });
