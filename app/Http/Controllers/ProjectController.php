@@ -153,4 +153,13 @@ class ProjectController extends Controller
         return redirect('/project')->with('message', 'A project With Name ' . $project->project_name . 'Was Deleted');
         ;
     }
+
+    public function pdf($id){
+        $data['project'] = Project::findOrFail($id);
+        
+        //return view('project/pdf',$data);
+        $pdf = \PDF::loadView('project/pdf', $data)->setPaper('a4', 'landscape');
+        return $pdf->download('invoice.pdf');
+        
+    }
 }

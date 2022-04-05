@@ -28,6 +28,7 @@
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalFeature">
                         Add Feature
                     </button>
+                    <a class="btn btn-primary" href="/project/{{ $project->id }}/pdf">Export To PDF</a>
                     <hr>
                     @include('alert')
                     <table class="table table-bordered" id="users-table">

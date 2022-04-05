@@ -24,6 +24,7 @@ Auth::routes([
   ]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('project/{id}/pdf',[App\Http\Controllers\ProjectController::class,'pdf']);
 Route::resource('project',App\Http\Controllers\ProjectController::class);
 Route::resource('module',App\Http\Controllers\ModuleController::class);
 Route::resource('feature',App\Http\Controllers\FeatureController::class);
